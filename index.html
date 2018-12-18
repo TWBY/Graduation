@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+  </head>
+</html>
+<body>
+  <div class="page demo" id="v-for-object">
+    <input type="checkbox" id="checktoggle" v-on:click="button_toggle">
+    <label for="checktoggle">show fail class</label>
+    <div class="score">{{total()}} / {{totalCredit}}</div>
+    <div class="bottom" v-for="course in filteredCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }">
+      <div class="course">{{ course.name }}</div>
+      <div class="number">{{ course.number }}</div>
+      <div class="credit">{{ course.credit }}</div>
+      <div class="isactive">{{course.active}}</div>
+    </div>
+  </div>
+</body>

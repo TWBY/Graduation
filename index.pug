@@ -1,0 +1,42 @@
+doctype html
+html
+	head
+		link(rel='stylesheet', type='text/css', href='assets/css/style.css')
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js')
+		script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+		script(type="text/javascript" src='assets/js/script.js')
+		
+		
+		
+body
+	.page#v-for-object.demo
+		input(type='checkbox' id='checktoggle' v-on:click='button_toggle')
+		label(for='checktoggle') show fail class
+
+		//- button(v-on:click='button_toggle')  button
+		
+
+		.score {{total()}} / {{totalCredit}}
+		.bottom( v-for='course in filteredCourses'  v-on:click='toggle(course)' v-bind:class='{ active: course.active }')
+			.course {{ course.name }}
+			.number {{ course.number }}
+			.credit {{ course.credit }}
+			.isactive {{course.active}}
+
+
+
+		
+	
+
+ 
+
+	
+
+
+
+ 
+
+	
+		

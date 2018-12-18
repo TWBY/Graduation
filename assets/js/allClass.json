@@ -1,0 +1,22 @@
+[
+    {
+        "name": "普通物理學",
+        "number": "IC245",
+        "credit": 3,
+        "active": false
+    },
+    
+    {
+        "name": "線性代數",
+        "number": "BG687",
+        "credit": 2,
+        "active": false
+    }, 
+    {
+        "name": "色彩學",
+        "number": "IC334",
+        "credit": 4,
+        "active": false
+    }
+        
+]
