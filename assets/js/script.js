@@ -33,14 +33,13 @@ $(document).ready(function () {
         
    
         //新增vue物件
-        new Vue({
+        var vm1 = new Vue({
             el: '#v-for-object',
             data: {
                 courses: data,
                 score: 0,
                 totalCredit: totalCredit,
-                checked : true,
-                
+                checked : true,               
             },
             
             methods: {
@@ -69,14 +68,43 @@ $(document).ready(function () {
                   return this.checked ? this.courses : this.courses.filter(d => d.active == false);
                 }
             }
-         })
+         });
 
+        var vm2 = new Vue({
+            el: '#app2',
+            data: {
+                message: 'hello',
+                radio: '',
+                firstName: '',
+                lastName: '',
+                fullName: '',
+                compufullName: ''
+            },
 
-
-          
-
-
+            computed:{
+                reversemessage: function(){
+                    return this.message.split('').reverse().join('');
+                },
+                comfullName: function(){
+                    this.compufullName =  this.firstName + this.lastName;
+                    return this.compufullName;
+                }
+            },
             
+            watch:{
+                firstName: function(val){
+                    this.fullName = val + this.lastName;
+                },
+                // lastName: function(val){
+                //     this.fullName = this.firstName + val;
+                // }
+            }
+            
+
+        });
+
+        console.log(vm2.reversemessage);
+         
     });
        
 });
