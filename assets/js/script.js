@@ -30,100 +30,20 @@ var vm2  = new Vue({
         TechnologyElective: "",
 
 
-        checked : true,
-       
+        checked : true,      
     },
     created(){  
         var now = this;
         axios.get('assets/js/allClass.json').then(function(val){
-               now.courses = val.data;
-               now.Compulsory = now.courses.Compulsory;
-               now.DesignGroupCompulsory = now.courses.DesignGroupCompulsory;
-               now.TechnologyCompulsory = now.courses.TechnologyCompulsory;
-               now.Elective = now.courses.Elective;
-               now.DesignElective = now.courses.DesignElective;
-               now.TechnologyElective = now.courses.TechnologyElective;
-               
+            now.courses = val.data;
+            now.Compulsory = now.courses.Compulsory;
+            now.DesignGroupCompulsory = now.courses.DesignGroupCompulsory;
+            now.TechnologyCompulsory = now.courses.TechnologyCompulsory;
+            now.Elective = now.courses.Elective;
+            now.DesignElective = now.courses.DesignElective;
+            now.TechnologyElective = now.courses.TechnologyElective;               
         })
         
-<<<<<<< HEAD
-   
-        //新增vue物件
-        var vm1 = new Vue({
-            el: '#v-for-object',
-            data: {
-                courses: data,
-                score: 0,
-                totalCredit: totalCredit,
-                checked : true,               
-            },
-            
-            methods: {
-
-                button_toggle: function(){
-                    this.checked = !this.checked;
-                },
-
-                toggle: function(s){
-                    s.active = !s.active;
-                },
-           
-                total: function(){
-                    var total = 0;
-                    this.courses.forEach(function (s) {
-                      if (s.active) {
-                        total += s.credit;
-                      }
-                    });
-                    this.score = total;
-                    return total;
-                }    
-            },
-            computed: {
-                filteredCourses() {
-                  return this.checked ? this.courses : this.courses.filter(d => d.active == false);
-                }
-            }
-         });
-
-        var vm2 = new Vue({
-            el: '#app2',
-            data: {
-                message: 'hello',
-                radio: '',
-                firstName: '',
-                lastName: '',
-                fullName: '',
-                compufullName: ''
-            },
-
-            computed:{
-                reversemessage: function(){
-                    return this.message.split('').reverse().join('');
-                },
-                comfullName: function(){
-                    this.compufullName =  this.firstName + this.lastName;
-                    return this.compufullName;
-                }
-            },
-            
-            watch:{
-                firstName: function(val){
-                    this.fullName = val + this.lastName;
-                },
-                // lastName: function(val){
-                //     this.fullName = this.firstName + val;
-                // }
-            }
-            
-
-        });
-
-        console.log(vm2.reversemessage);
-         
-    });
-       
-=======
     },
 
     computed: {
@@ -146,8 +66,7 @@ var vm2  = new Vue({
         },       
         filteredTechnologyElectiveCourses() {
             return this.check(this.TechnologyElective);            
-        }     
-       
+        }            
     },
 
 
@@ -257,7 +176,6 @@ var vm2  = new Vue({
     }
 
     
->>>>>>> 12180928
 });
 
 
