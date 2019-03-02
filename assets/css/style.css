@@ -628,16 +628,16 @@ input[type=checkbox] {
 #mouse-scroll {
   z-index: 9999;
   display: inline-block;
-  font-size: 16px; }
+  font-size: 10px; }
   #mouse-scroll .mouse {
-    font-size: 1em;
+    font-size: 0.8em;
     width: 1em;
     height: 2em;
-    border-radius: 1em;
+    border-radius: 0.8em;
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
-    border: 0.2em solid #fff;
+    border: 0.1em solid #fff;
     margin-left: 0.15em; }
     #mouse-scroll .mouse .mouse-in {
       width: 0.2em;
@@ -648,18 +648,18 @@ input[type=checkbox] {
       -webkit-animation: animated-mouse 1.2s ease infinite;
       animation: animated-mouse 1.2s ease infinite; }
   #mouse-scroll .arrows {
-    font-size: 1em; }
+    font-size: 0.8em; }
     #mouse-scroll .arrows .arrow {
       width: 0.5em;
       height: 0.5em;
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-      border-right: 0.2em solid #fff;
-      border-bottom: 0.2em solid #fff;
-      margin: 0 0 0.3em 0.5em; }
+      border-right: 0.1em solid #fff;
+      border-bottom: 0.1em solid #fff;
+      margin: 0 0 0.1em 0.5em; }
     #mouse-scroll .arrows .down-arrow-1 {
-      margin-top: 0.6em;
+      margin-top: 0.4em;
       -webkit-animation: mouse-scroll 1s infinite;
       animation: mouse-scroll 1s infinite;
       -webkit-animation-delay: .1s;

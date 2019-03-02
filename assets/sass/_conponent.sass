@@ -39,14 +39,14 @@ $border: #fff
 #mouse-scroll
   z-index: 9999
   display: inline-block
-  font-size: 16px
+  font-size: 10px
 
   & .mouse
-      font-size: 1em
+      font-size: 0.8em
       +size(1em, 2em)
-      border-radius: 1em
+      border-radius: 0.8em
       transform: none
-      border: 0.2em solid $border   
+      border: 0.1em solid $border   
       margin-left: 0.15em
       & .mouse-in
           +size(0.2em, 0.5em)
@@ -55,18 +55,17 @@ $border: #fff
           position: relative
           animation: animated-mouse 1.2s ease infinite
   & .arrows
-      font-size: 1em
+      font-size: 0.8em
       & .arrow
           +size(0.5em, 0.5em)
           transform: rotate(45deg)
-          border-right: 0.2em solid $border
-          border-bottom: 0.2em solid $border
-          margin: 0 0 0.3em 0.5em
+          border-right: 0.1em solid $border
+          border-bottom: 0.1em solid $border
+          margin: 0 0 0.1em 0.5em
       
       & .down-arrow-1
-          margin-top: 0.6em
+          margin-top: 0.4em
           animation: mouse-scroll 1s infinite
-
           animation-delay: .1s
           animation-direction: alternate
 
@@ -75,7 +74,6 @@ $border: #fff
       & .down-arrow-2
           animation-delay: .2s
           animation-direction: alternate
-
       & .down-arrow-3
           animation-delay: .3s
           animation-direction: alternate
