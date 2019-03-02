@@ -1,15 +1,13 @@
 
 var vm1  = new Vue({
     el: "#intro",
-    data: {
-       
+    data: {      
     },
     methods:{     
         scroll : function (){               
             $('html, body').animate({
                 scrollTop: $('.page').offset().top
-            }, 1000);
-                      
+            }, 1000);                     
         },            
     }
 
@@ -69,7 +67,6 @@ var vm2  = new Vue({
         }            
     },
 
-
     methods:{
         //----------------------------------------------
         check: function(category){
@@ -118,8 +115,7 @@ var vm2  = new Vue({
         getDesignCredit: function(){                
             let total = 0;          
             total += this.getDesignGroupCompulsoryCredit();         
-            total += this.getDesignElectiveCredit();
-                   
+            total += this.getDesignElectiveCredit();                  
             return total;
         },
         getTechnologyCredit: function(){                
@@ -190,9 +186,9 @@ var basicScrollTop = function () {
     console.log(window.scrollY);
       if (window.scrollY >= height - height*0.2) {
         $(".showCredit").addClass("cansee");
-      } else {
+    } else {
         $(".showCredit").removeClass("cansee");
-      }    
+    }    
     }  
 
     // Listeners
@@ -200,10 +196,8 @@ var basicScrollTop = function () {
     // Credit.addEventListener('scroll', CreditReveal);
     // $(".showCredit").on("scroll",CreditReveal());
     window.addEventListener('scroll', CreditReveal);
-
-      
-  };
+};
 basicScrollTop();
-  
+
 
 Vue.config.devtools = true;
