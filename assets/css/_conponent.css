@@ -1,0 +1,121 @@
+input[type=checkbox] {
+  display: none; }
+  input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em; }
+    input[type=checkbox] + label:before {
+      content: "\2714";
+      border: 0.1em solid #333333;
+      border-radius: 0.2em;
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      padding-left: 0.2em;
+      padding-bottom: 0.3em;
+      margin-right: 0.2em;
+      vertical-align: bottom;
+      color: transparent;
+      -webkit-transition: .2s;
+      -o-transition: .2s;
+      transition: .2s; }
+    input[type=checkbox] + label:active:before {
+      -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+      transform: scale(0); }
+  input[type=checkbox]:checked + label:before {
+    background-color: MediumSeaGreen;
+    border-color: blue;
+    color: #fff; }
+
+#mouse-scroll {
+  z-index: 9999;
+  display: inline-block;
+  font-size: 16px; }
+  #mouse-scroll .mouse {
+    font-size: 1em;
+    width: 1em;
+    height: 2em;
+    border-radius: 1em;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    border: 0.2em solid #fff;
+    margin-left: 0.15em; }
+    #mouse-scroll .mouse .mouse-in {
+      width: 0.2em;
+      height: 0.5em;
+      margin: 0.5em auto;
+      background: #fff;
+      position: relative;
+      -webkit-animation: animated-mouse 1.2s ease infinite;
+      animation: animated-mouse 1.2s ease infinite; }
+  #mouse-scroll .arrows {
+    font-size: 1em; }
+    #mouse-scroll .arrows .arrow {
+      width: 0.5em;
+      height: 0.5em;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      border-right: 0.2em solid #fff;
+      border-bottom: 0.2em solid #fff;
+      margin: 0 0 0.3em 0.5em; }
+    #mouse-scroll .arrows .down-arrow-1 {
+      margin-top: 0.6em;
+      -webkit-animation: mouse-scroll 1s infinite;
+      animation: mouse-scroll 1s infinite;
+      -webkit-animation-delay: .1s;
+      animation-delay: .1s;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
+    #mouse-scroll .arrows .down-arrow-2, #mouse-scroll .arrows .down-arrow-3 {
+      -webkit-animation: mouse-scroll 1s infinite;
+      animation: mouse-scroll 1s infinite; }
+    #mouse-scroll .arrows .down-arrow-2 {
+      -webkit-animation-delay: .2s;
+      animation-delay: .2s;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
+    #mouse-scroll .arrows .down-arrow-3 {
+      -webkit-animation-delay: .3s;
+      animation-delay: .3s;
+      -webkit-animation-direction: alternate;
+      animation-direction: alternate; }
+
+@-webkit-keyframes animated-mouse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0.5em);
+    transform: translateY(0.5em); } }
+
+@keyframes animated-mouse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(0.5em);
+    transform: translateY(0.5em); } }
+
+@-webkit-keyframes mouse-scroll {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }
+
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0; }
+  50% {
+    opacity: 0.5; }
+  100% {
+    opacity: 1; } }

@@ -1,57 +1,158 @@
 
-@mixin size ($width, $height)
-    width: $width
-    height: $height
+@import 'https://fonts.googleapis.com/css?family=Noto+Sans+TC'
 
-html,body
-    padding: 0
-    margin: 0
-    +size(100%, 100%)
+@import  _mixin
+@import  _base
+@import  _layout
+@import  _conponent
+
+body
+    background: linear-gradient(#f5bc19,#db516a)
+    background-size: 100% 100%
+    padding-bottom: 150px
+
+#intro
+    +size(100vw, 100vh)
+    position: relative
+
+//待更改為grid
+.home
+    +size(80vw, auto)
+    position: absolute
+    top: 40%
+    left: 50%
+    transform: translate(-50%, -50%)
 
 
-input[type=checkbox]
-  + label
-    display: block
-    margin: 0.2em
+.te
+    position: absolute
+    +size(20vw, auto)
+    bottom: 0%
+
+.tc
+    position: absolute
+    +size(20vw, auto)
+    bottom: 0%
+    right: 10%
+
+.de
+    position: absolute
+    +size(15vw, auto)
+    bottom: 0%
+    left: 0%
+
+.dc
+    position: absolute
+    +size(25vw, auto)
+    bottom: 0%
+    right: 0%
+
+.ce
+    position: absolute
+    +size(15vw, auto)
+    bottom: 0%
+    left: 0%
+
+.teach
+    +size(auto, 800px)
+    position: absolute
+    right: 8%
+    top: 5%
+
+#mouse-scroll
+    font-size: 20px
+    position: absolute
+    display: inline-block
+    left: 50%
+    top: 85%
+
     cursor: pointer
-    padding: 0.2em
-    &:before
-      content: "\2714"
-      border: 0.1em solid #f24
-      border-radius: 0.2em
-      display: inline-block
-      width: 1em
-      height: 1em
-      padding-left: 0.2em
-      padding-bottom: 0.3em
-      margin-right: 0.2em
-      vertical-align: bottom
-      color: transparent
-      transition: .2s
-    &:active:before
-      transform: scale(0)
-  display: block
-
-  &:checked + label:before
-    background-color: MediumSeaGreen
-    border-color: MediumSeaGreen
-    color: #fff
+    &:hover
+        color: #fff
 
 
-    
+.showCredit
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    border-radius: 7px
+    padding: 20px
+    width: 220px
+    background-color: #ddd
+
+    visibility: hidden
+    opacity: 0
+    transition: visibility 0s 2s, opacity 0.8s ease-in-out
+
+.cansee
+    // visibility: visible
+    animation: seen 0.8s ease-out
+    visibility: visible
+    opacity: 1
+    transition: opacity 0.8s ease-in-out
+
+@keyframes seen
+    0%
+        top: -5%        
+    100%
+        top: 25px
+
+
+.totalCredit
+    font-size: 30px
+
+
+.Compulsory, .DesignGroupCompulsory, .TechnologyCompulsory, .Elective, .DesignElective, .TechnologyElective
+    // border: solid 3px black
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    border-radius: 7px
+    padding: 20px
+    background-color: #eee
+    color: #333
+    margin-top: 30px
+
+.sidebar
+    font-size: 30px
+
+#DesignGroupCompulsory_5 
+    & .name
+        font-size: 14px
+
+#Elective_9 
+    & .name
+        font-size: 15px
+
+#DesignElective_10
+    & .name
+        font-size: 15px
+#DesignElective_12, #DesignElective_13
+    & .name
+        font-size: 15px
+#TechnologyElective_16, #TechnologyElective_17
+    & .name
+        font-size: 15px
 
 .bottom
-    border: solid 1px black
-    text-align: center
-    +size(100px, 100px)
+    display: flex
+    justify-content: center
+    align-items: center
+    +size(auto, 100px)
     cursor: pointer
+    border-radius: 7px
+    padding: 10px 8px     
+    transition-duration: 0.5s
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
 
-    &:hover
-        background-color: #333
-        color: #fff
+    & .unitClass
+        text-align: center
+
+    &:hover  
+        transition-duration: 0.5s
+        transform: translate(-5px, -5px)
+        
 
 .active
     background-color: #f24
     color: #fff
+    transition-duration: 0.5s
+
 
 

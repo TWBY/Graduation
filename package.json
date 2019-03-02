@@ -1,0 +1,24 @@
+{
+  "name": "scroll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TWBY/graduate.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TWBY/graduate/issues"
+  },
+  "homepage": "https://github.com/TWBY/graduate#readme",
+  "dependencies": {
+    "json-server": "^0.14.2",
+    "vue-scrollto": "^2.13.0"
+  },
+  "devDependencies": {}
+}
