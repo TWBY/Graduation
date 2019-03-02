@@ -3,27 +3,123 @@ html
 	head
 		link(rel='stylesheet', type='text/css', href='assets/css/style.css')
 		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js')
-		script(src='https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js')
-		script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+		meta(name='viewport', content='width=device-width, initial-scale=1')
+		
+		
+	body
+		#intro
+			img.home(src="assets/images/home.svg", alt="")
+			#mouse-scroll(v-on:click='scroll')
+				.mouse
+					.mouse-in
+				.arrows
+					.arrow.down-arrow-1
+					.arrow.down-arrow-2
+					.arrow.down-arrow-3
+
+		.page#v-for-object.demo
+			.showCredit
+				.totalCredit
+					.CompulsoryName 總學分
+					.CreditNumber {{ getTotalCredit() }} / 130        
+				.CompulsoryCredit 
+					.CompulsoryName 系必修
+					.CreditNumber {{ getCompulsoryCredit() }} / 38
+				.TechnologyCompulsoryCredit  　
+					.CompulsoryName 科技必修
+					.CreditNumber {{ getTechnologyCompulsoryCredit() }} / 30
+				.TechnologyElectiveCredit   
+					.CompulsaoryName 本組(系)選修
+					.CreditNumber {{ getTechnologyCredit() }} / 12
+				.DesignElectiveCredit  
+					.CompulsoryName 他組必選修	
+					.CreditNumber {{ getDesignCredit() }} /  &ensp;5
+				.check
+					input(type='checkbox' id='checktoggle' v-on:click='button_toggle')
+					label(for='checktoggle') 顯示未過科目
+					
+
+			
+			.showCalss
+				
+				.Compulsory
+					.sidebar 系上必修
+					.bottom(v-for='(course,index) in filteredCompulsoryCourses' 
+							v-on:click='toggle(course)'
+							:class='{ active: course.active }' 
+							:id="gernerateCompulsoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+						
+				.DesignGroupCompulsory
+					img.dc(src="assets/images/dc.png", alt="")
+					.sidebar 設計必修
+					.bottom(v-for='(course,index) in filteredDesignGroupCompulsoryCourses' 
+							v-on:click='toggle(course)' 
+							v-bind:class='{ active: course.active }' 
+							:id="gernerateDesignGroupCompulsoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+
+				.TechnologyCompulsory
+					img.tc(src="assets/images/tc.png", alt="")
+					.sidebar 科技必修
+					.bottom(v-for='(course,index) in filteredTechnologyCompulsoryCourses' 
+							v-on:click='toggle(course)' 
+							v-bind:class='{ active: course.active }'
+							:id="gernerateTechnologyCompulsorysoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+
+				.Elective
+					img.ce(src="assets/images/ce.png", alt="")
+					.sidebar 系上選修
+					.bottom(v-for='(course,index) in filteredElectiveCourses' 
+							v-on:click='toggle(course)' 
+							v-bind:class='{ active: course.active }' 
+							:id="gernerateElectivesoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+
+				.DesignElective
+					img.de(src="assets/images/de.png", alt="")
+					.sidebar 設計選修
+					.bottom(v-for='(course,index) in filteredDesignElectiveCourses' 
+							v-on:click='toggle(course)' 
+							v-bind:class='{ active: course.active }' 
+							:id="gernerateDesignElectivesoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+
+				.TechnologyElective
+					img.te(src="assets/images/te.png", alt="")
+					.sidebar 科技選修
+					.bottom(v-for='(course,index) in filteredTechnologyElectiveCourses' 
+							v-on:click='toggle(course)' 
+							v-bind:class='{ active: course.active }' 
+							:id=" gernerateTechnologyElectivesoryId(index)")
+						.unitClass
+							.name {{course.name}}
+							.number {{ course.number }}
+							.credit {{ course.credit }}
+
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js")
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js")
 		script(type="text/javascript" src='assets/js/script.js')
-		
-		
-		
-body
-	.page#v-for-object.demo
-		input(type='checkbox' id='checktoggle' v-on:click='button_toggle')
-		label(for='checktoggle') show fail class
+	
 
-		//- button(v-on:click='button_toggle')  button
-		
 
-		.score {{total()}} / {{totalCredit}}
-		.bottom( v-for='course in filteredCourses'  v-on:click='toggle(course)' v-bind:class='{ active: course.active }')
-			.course {{ course.name }}
-			.number {{ course.number }}
-			.credit {{ course.credit }}
-			.isactive {{course.active}}
+	
 
 	
 	#app2

@@ -1,22 +1,502 @@
-[
-    {
-        "name": "普通物理學",
-        "number": "IC245",
-        "credit": 3,
-        "active": false
-    },
-    
-    {
-        "name": "線性代數",
-        "number": "BG687",
-        "credit": 2,
-        "active": false
-    }, 
-    {
-        "name": "色彩學",
-        "number": "IC334",
-        "credit": 4,
-        "active": false
-    }
+
+
+{
+    "Compulsory": [
+        {
+            "name": "test",
+            "number": "IC181",
+            "credit": 3,
+            "active": false
+        },
         
-]
+        {
+            "name": "設計概論",
+            "number": "BG151",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "數位影像處理",
+            "number": "IC120",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "數位影音概論",
+            "number": "IC288",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "多媒體設計概論",
+            "number": "IC214",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "互動腳本製作",
+            "number": "IC225",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "網站設計",
+            "number": "IC166",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "人機互動概論",
+            "number": "IC291",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "跨媒體整合",
+            "number": "IC324",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "專題製作(一)",
+            "number": "IC464",
+            "credit": 4,
+            "active": false
+        }, 
+        {
+            "name": "專業實習",
+            "number": "IC401",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "專題製作(二)",
+            "number": "IC465",
+            "credit": 4,
+            "active": false
+        }
+    ],
+    "DesignGroupCompulsory":  [
+        {
+            "name": "基礎素描(一):素描",
+            "number": "IC145",
+            "credit": 3,
+            "active": false
+        },
+        
+        {
+            "name": "攝影學",
+            "number": "BG116",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "設計史",
+            "number": "IC175",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "程式設計",
+            "number": "IC212",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "程式設計實習",
+            "number": "IC336",
+            "credit": 0,
+            "active": false
+        }, 
+        {
+            "name": "設計基礎(二):創意素描",
+            "number": "IC168",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "色彩學",
+            "number": "IC191",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "電腦繪圖",
+            "number": "IC205",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "動畫概論",
+            "number": "IC194",
+            "credit": 3,
+            "active": false
+        }, 
+        {
+            "name": "平面設計",
+            "number": "IC204",
+            "credit": 3,
+            "active": false
+        }
+        
+    ],
+    "TechnologyCompulsory":  [
+        {
+            "name": "普通物理學",
+            "number": "IC224",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "微積分概論",
+            "number": "IC287",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "程式設計(一)",
+            "number": "IC184",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "程式設計實習(一)",
+            "number": "IC286",
+            "credit": 0,
+            "active": false
+        },      
+         {
+            "name": "線性代數",
+            "number": "IC248",
+            "credit": 3,
+            "active": false
+        },  
+         {
+            "name": "電腦網路概論",
+            "number": "IC193",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "程式設計(二)",
+            "number": "IC192",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "程式設計實習(二)",
+            "number": "IC200",
+            "credit": 0,
+            "active": false
+        },      
+         {
+            "name": "視窗應用程式設計",
+            "number": "IC238",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "資料結構",
+            "number": "IC172",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "多媒體程式設計",
+            "number": "IC255",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "網頁程式設計",
+            "number": "IC186",
+            "credit": 3,
+            "active": false
+        }     
+        
+    ],
+    "Elective":  [
+        {
+            "name": "智慧財產權",
+            "number": "IC362",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "敘事與故事",
+            "number": "IC339",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "科技英文",
+            "number": "IC300",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "電玩企劃",
+            "number": "IC242",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "創新媒體實務應用",
+            "number": "IC296",
+            "credit": 2,
+            "active": false
+        },      
+         {
+            "name": "電玩製作",
+            "number": "IC250",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "電子商務法律實務",
+            "number": "IC293",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "網路社群媒體分析",
+            "number": "IC331",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "資訊傳播專題(一)",
+            "number": "IC454",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "大數據創新應用專題",
+            "number": "IC330",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "社群媒體專題",
+            "number": "IC329",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "資訊傳播專題(二) ",
+            "number": "IC456",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "專業實習(二)",
+            "number": "IC451",
+            "credit": 3,
+            "active": false
+        }      
+        
+    ],
+    "DesignElective":  [
+        {
+            "name": "創意方法",
+            "number": "IC256",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "行銷傳播",
+            "number": "IC207",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "電子商務",
+            "number": "IC328",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "文創產業個案",
+            "number": "IC249",
+            "credit": 3,
+            "active": false
+        },      
+        
+         {
+            "name": "雲端策展與執行",
+            "number": "IC289",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "3D電腦繪圖",
+            "number": "IC335",
+            "credit": 3,
+            "active": false
+        },      
+        
+        
+         {
+            "name": "影視製作專題",
+            "number": "IC322",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "作品集設計與展現",
+            "number": "IC326",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "3D電腦動畫",
+            "number": "IC337",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "複合媒材設計",
+            "number": "IC189",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "行動裝置視覺介面設計",
+            "number": "IC240",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "設計繪畫",
+            "number": "IC272",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "穿戴式科技設計(一)",
+            "number": "IC294",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "穿戴式科技設計(二)",
+            "number": "IC295",
+            "credit": 3,
+            "active": false
+        }      
+        
+    ],
+    "TechnologyElective":  [
+        {
+            "name": "手機遊戲設計",
+            "number": "IC334",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "行動裝置程式設計",
+            "number": "IC190",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "Java程式設計",
+            "number": "IC275",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "電腦圖學",
+            "number": "IC271",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "網路資料庫系統",
+            "number": "IC261",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "資訊隱私",
+            "number": "IC298",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "網頁遊戲程式設計",
+            "number": "IC338",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "網際網路程式設計",
+            "number": "IC257",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "人機互動實務",
+            "number": "IC344",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "人工智慧概論",
+            "number": "IC387",
+            "credit": 3,
+            "active": false
+        },      
+     {
+            "name": "網站設計專題",
+            "number": "IC343",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "展示科技應用",
+            "number": "IC297",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "雲端應用程式",
+            "number": "IC290",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "混合實境",
+            "number": "IC196",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "資訊安全",
+            "number": "IC292",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "虛擬實境程式設計",
+            "number": "IC345",
+            "credit": 3,
+            "active": false
+        },      
+        {
+            "name": "穿戴式科技設計(一)",
+            "number": "IC294",
+            "credit": 3,
+            "active": false
+        },      
+         {
+            "name": "穿戴式科技設計(二)",
+            "number": "IC295",
+            "credit": 3,
+            "active": false
+        }      
+    ]    
+        
+    
+}
+

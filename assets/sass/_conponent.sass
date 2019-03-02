@@ -1,0 +1,103 @@
+@import  _mixin
+
+// input--------------------------------------------- 
+
+input[type=checkbox]
+  + label
+    margin-top: 0.2em
+    display: flex
+    flex-direction: row
+    align-items: flex-start
+    cursor: pointer
+    font-size: 1.1em
+    &:before
+      //這個是勾勾，content: "\2714"是勾勾的編碼
+      content: "\2714"
+      font-size: 0.5em
+      border: 0.15em solid #333333
+      border-radius: 0.2em
+      align-self: center
+      padding-left: 0.2em
+      padding-right: 0.2em
+      margin-right: 0.8em
+      color: transparent
+      transition: .2s
+    &:active:before
+      transform: scale(0)
+  display: none
+
+  &:checked + label:before
+    background-color: MediumSeaGreen
+    border-color: MediumSeaGreen
+    color: #fff
+
+// arrow---------------------------------------------
+
+$border: #fff
+
+
+#mouse-scroll
+  z-index: 9999
+  display: inline-block
+  font-size: 16px
+
+  & .mouse
+      font-size: 1em
+      +size(1em, 2em)
+      border-radius: 1em
+      transform: none
+      border: 0.2em solid $border   
+      margin-left: 0.15em
+      & .mouse-in
+          +size(0.2em, 0.5em)
+          margin: 0.5em auto
+          background: $border
+          position: relative
+          animation: animated-mouse 1.2s ease infinite
+  & .arrows
+      font-size: 1em
+      & .arrow
+          +size(0.5em, 0.5em)
+          transform: rotate(45deg)
+          border-right: 0.2em solid $border
+          border-bottom: 0.2em solid $border
+          margin: 0 0 0.3em 0.5em
+      
+      & .down-arrow-1
+          margin-top: 0.6em
+          animation: mouse-scroll 1s infinite
+
+          animation-delay: .1s
+          animation-direction: alternate
+
+      & .down-arrow-2, .down-arrow-3
+          animation: mouse-scroll 1s infinite
+      & .down-arrow-2
+          animation-delay: .2s
+          animation-direction: alternate
+
+      & .down-arrow-3
+          animation-delay: .3s
+          animation-direction: alternate
+  
+
+
+@keyframes animated-mouse
+  0%
+    opacity: 1
+    transform: translateY(0)
+  100%
+    opacity: 0
+    transform: translateY(0.5em)
+
+@keyframes mouse-scroll
+  0%
+    opacity: 0
+  50%
+    opacity: 0.5
+  100%
+    opacity: 1
+
+
+
+

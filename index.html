@@ -3,23 +3,112 @@
   <head>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.1/addons/p5.dom.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script type="text/javascript" src="assets/js/script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
-</html>
-<body>
-  <div class="page demo" id="v-for-object">
-    <input type="checkbox" id="checktoggle" v-on:click="button_toggle">
-    <label for="checktoggle">show fail class</label>
-    <div class="score">{{total()}} / {{totalCredit}}</div>
-    <div class="bottom" v-for="course in filteredCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }">
-      <div class="course">{{ course.name }}</div>
-      <div class="number">{{ course.number }}</div>
-      <div class="credit">{{ course.credit }}</div>
-      <div class="isactive">{{course.active}}</div>
+  <body>
+    <div id="intro"><img class="home" src="assets/images/home.svg" alt="">
+      <div id="mouse-scroll" v-on:click="scroll">
+        <div class="mouse">
+          <div class="mouse-in"></div>
+        </div>
+        <div class="arrows">
+          <div class="arrow down-arrow-1"></div>
+          <div class="arrow down-arrow-2"></div>
+          <div class="arrow down-arrow-3"></div>
+        </div>
+      </div>
     </div>
+    <div class="page demo" id="v-for-object">
+      <div class="showCredit">
+        <div class="totalCredit">
+          <div class="CompulsoryName">總學分</div>
+          <div class="CreditNumber">{{ getTotalCredit() }} / 130        </div>
+        </div>
+        <div class="CompulsoryCredit"> 
+          <div class="CompulsoryName">系必修</div>
+          <div class="CreditNumber">{{ getCompulsoryCredit() }} / 38</div>
+        </div>
+        <div class="TechnologyCompulsoryCredit"> 　
+          <div class="CompulsoryName">科技必修</div>
+          <div class="CreditNumber">{{ getTechnologyCompulsoryCredit() }} / 30</div>
+        </div>
+        <div class="TechnologyElectiveCredit">  
+          <div class="CompulsaoryName">本組(系)選修</div>
+          <div class="CreditNumber">{{ getTechnologyCredit() }} / 12</div>
+        </div>
+        <div class="DesignElectiveCredit"> 
+          <div class="CompulsoryName">他組必選修	</div>
+          <div class="CreditNumber">{{ getDesignCredit() }} /  &ensp;5</div>
+        </div>
+        <div class="check">
+          <input type="checkbox" id="checktoggle" v-on:click="button_toggle">
+          <label for="checktoggle">顯示未過科目</label>
+        </div>
+      </div>
+      <div class="showCalss">
+        <div class="Compulsory">
+          <div class="sidebar">系上必修</div>
+          <div class="bottom" v-for="(course,index) in filteredCompulsoryCourses" v-on:click="toggle(course)" :class="{ active: course.active }" :id="gernerateCompulsoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="DesignGroupCompulsory"><img class="dc" src="assets/images/dc.png" alt="">
+          <div class="sidebar">設計必修</div>
+          <div class="bottom" v-for="(course,index) in filteredDesignGroupCompulsoryCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id="gernerateDesignGroupCompulsoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="TechnologyCompulsory"><img class="tc" src="assets/images/tc.png" alt="">
+          <div class="sidebar">科技必修</div>
+          <div class="bottom" v-for="(course,index) in filteredTechnologyCompulsoryCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id="gernerateTechnologyCompulsorysoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="Elective"><img class="ce" src="assets/images/ce.png" alt="">
+          <div class="sidebar">系上選修</div>
+          <div class="bottom" v-for="(course,index) in filteredElectiveCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id="gernerateElectivesoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="DesignElective"><img class="de" src="assets/images/de.png" alt="">
+          <div class="sidebar">設計選修</div>
+          <div class="bottom" v-for="(course,index) in filteredDesignElectiveCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id="gernerateDesignElectivesoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="TechnologyElective"><img class="te" src="assets/images/te.png" alt="">
+          <div class="sidebar">科技選修</div>
+          <div class="bottom" v-for="(course,index) in filteredTechnologyElectiveCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id=" gernerateTechnologyElectivesoryId(index)">
+            <div class="unitClass">
+              <div class="name">{{course.name}}</div>
+              <div class="number">{{ course.number }}</div>
+              <div class="credit">{{ course.credit }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<<<<<<< HEAD
   </div>
   <div id="app2">
     <input type="text" v-model="message">
@@ -37,3 +126,10 @@
     <h3>textcom = {{comfullName}}</h3>
   </div>
 </body>
+=======
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.21/vue.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+    <script type="text/javascript" src="assets/js/script.js"></script>
+  </body>
+</html>
+>>>>>>> 12180928

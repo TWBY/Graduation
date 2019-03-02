@@ -1,0 +1,263 @@
+
+    
+    
+.demo
+    display: grid
+    grid-template-columns: 350px auto 350px
+    grid-template-rows:  auto
+
+.showCredit
+    position: fixed
+    left: 20px
+    top: 30px
+
+.totalCredit, .CompulsoryCredit, .TechnologyCompulsoryCredit, .TechnologyElectiveCredit, .DesignElectiveCredit
+    display: flex
+    justify-content: space-between  
+
+
+.showCalss
+    grid-column: 2 / span 1
+
+
+.Compulsory, .DesignGroupCompulsory, .TechnologyCompulsory, .Elective, .DesignElective, .TechnologyElective
+    grid-column-gap: 10px
+
+.Compulsory
+    // border: solid 3px green
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: 130px auto
+
+    & .sidebar
+        grid-area: 1 / 1 / 3 / 2
+
+    & #Compulsory_0
+        grid-area: 1 / 2 / 1 / 3
+    & #Compulsory_2
+        grid-area: 1 / 3 / 2 / 4
+    & #Compulsory_4
+        grid-area: 1 / 4 / 2 / 5
+    & #Compulsory_6
+        grid-area: 1 / 5 / 2 / 6
+
+
+    & #Compulsory_1
+        grid-area: 2 / 2 / 3 / 3
+    & #Compulsory_3
+        grid-area: 2 / 3 / 3 / 4
+    & #Compulsory_5
+        grid-area: 2 / 4 / 3 / 5
+    & #Compulsory_7
+        grid-area: 2 / 5 / 3 / 6
+
+    & #Compulsory_8
+        grid-area: 1 / 7 / 2 / 8
+    & #Compulsory_9
+        grid-area: 1 / 8 / 2 / 9
+    & #Compulsory_10
+        grid-area: 2 / 8 / 3 / 9
+    & #Compulsory_11
+        grid-area: 1 / 9 / 2 / 10
+
+.DesignGroupCompulsory
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: repeat(5, 130px) 
+
+    & #DesignGroupCompulsory_0 
+        grid-area: 1 / 2 / 2 / 3
+    & #DesignGroupCompulsory_1 
+        grid-area: 2 / 2 / 3 / 3
+    & #DesignGroupCompulsory_2 
+        grid-area: 3 / 2 / 4 / 3
+    & #DesignGroupCompulsory_3 
+        grid-area: 4 / 2 / 5 / 3
+    & #DesignGroupCompulsory_4 
+        grid-area: 5 / 2 / 6 / 3
+    & #DesignGroupCompulsory_5 
+        grid-area: 1 / 3 / 2 / 4
+    & #DesignGroupCompulsory_6 
+        grid-area: 2 / 3 / 3 / 4
+    & #DesignGroupCompulsory_7 
+        grid-area: 1 / 4 / 2 / 5
+    & #DesignGroupCompulsory_8 
+        grid-area: 1 / 5 / 2 / 6
+    & #DesignGroupCompulsory_9 
+        grid-area: 2 / 5 / 3 / 6
+
+.TechnologyCompulsory
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: repeat(4, 130px)
+
+    & .sidebar
+        grid-area: 1 / 1 / 3 / 2
+
+    & #TechnologyCompulsory_0 
+        grid-area: 1 / 2 / 2 / 3
+    & #TechnologyCompulsory_1 
+        grid-area: 2 / 2 / 3 / 3
+    & #TechnologyCompulsory_2 
+        grid-area: 3 / 2 / 4 / 3
+    & #TechnologyCompulsory_3 
+        grid-area: 4 / 2 / 5 / 3
+
+    & #TechnologyCompulsory_4 
+        grid-area: 1 / 3 / 2 / 4
+    & #TechnologyCompulsory_5 
+        grid-area: 2 / 3 / 3 / 4
+    & #TechnologyCompulsory_6 
+        grid-area: 3 / 3 / 4 / 4
+    & #TechnologyCompulsory_7 
+        grid-area: 4 / 3 / 5 / 4
+
+    & #TechnologyCompulsory_8 
+        grid-area: 1 / 4 / 2 / 5
+    & #TechnologyCompulsory_9 
+        grid-area: 2 / 4 / 3 / 5
+
+    & #TechnologyCompulsory_10 
+        grid-area: 1 / 5 / 2 / 6
+    & #TechnologyCompulsory_11 
+        grid-area: 1 / 6 / 6 / 7
+
+.Elective
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: repeat(3, 130px)
+
+    & .sidebar
+    grid-area: 1 / 1 / 3 / 2
+
+    & #Elective_0 
+        grid-area: 1 / 2 / 2 / 3
+
+    & #Elective_1 
+        grid-area: 1 / 4 / 2 / 5
+    & #Elective_2 
+        grid-area: 2 / 4 / 3 / 5
+
+    & #Elective_3 
+        grid-area: 1 / 6 / 2 / 7
+    & #Elective_4 
+        grid-area: 2 / 6 / 3 / 7
+
+    & #Elective_5 
+        grid-area: 1 / 7 / 2 / 8
+    & #Elective_6 
+        grid-area: 2 / 7 / 3 / 8
+    & #Elective_7 
+        grid-area: 3 / 7 / 4 / 8
+
+    & #Elective_8 
+        grid-area: 1 / 8 / 2 / 9
+    & #Elective_9 
+        grid-area: 2 / 8 / 3 / 9
+    & #Elective_10 
+        grid-area: 3 / 8 / 4 / 9
+
+    & #Elective_11 
+        grid-area: 1 / 9 / 2 / 10
+    & #Elective_12 
+        grid-area: 2 / 9 / 3 / 10
+
+.DesignElective
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: repeat(3, 130px)
+
+    & .sidebar
+    grid-area: 1 / 1 / 3 / 2
+
+    & #DesignElective_0 
+        grid-area: 1 / 3 / 2 / 4
+    & #DesignElective_1 
+        grid-area: 2 / 3 / 3 / 4
+
+    & #DesignElective_2 
+        grid-area: 1 / 4 / 2 / 5
+    & #DesignElective_3 
+        grid-area: 2 / 4 / 3 / 5
+
+    & #DesignElective_4 
+        grid-area: 1 / 5 / 2 / 6
+    & #DesignElective_5 
+        grid-area: 3 / 5 / 4 / 6
+
+    & #DesignElective_6 
+        grid-area: 1 / 6 / 2 / 7
+    & #DesignElective_7 
+        grid-area: 2 / 6 / 3 / 7
+    & #DesignElective_8 
+        grid-area: 3 / 6 / 4 / 7
+
+    & #DesignElective_9 
+        grid-area: 1 / 7 / 2 / 8
+    & #DesignElective_10 
+        grid-area: 2 / 7 / 3 / 8
+    & #DesignElective_11 
+        grid-area: 3 / 7 / 4 / 8
+
+    & #DesignElective_12
+        grid-area: 1 / 8 / 2 / 9
+
+    & #DesignElective_13 
+        grid-area: 1 / 9 / 2 / 10
+
+
+
+.TechnologyElective
+    display: grid
+    grid-template-columns: repeat(9, 1fr)
+    grid-template-rows: repeat(5, 130px)
+
+    & .sidebar
+        grid-area: 1 / 1 / 3 / 2
+
+    & #TechnologyElective_0 
+        grid-area: 1 / 4 / 2 / 5
+    & #TechnologyElective_1 
+        grid-area: 2 / 4 / 3 / 5
+    & #TechnologyElective_2 
+        grid-area: 3 / 4 / 4 / 5
+
+    & #TechnologyElective_3 
+        grid-area: 1 / 5 / 2 / 6
+    & #TechnologyElective_4 
+        grid-area: 2 / 5 / 3 / 6
+    & #TechnologyElective_5 
+        grid-area: 3 / 5 / 4 / 6
+    & #TechnologyElective_6 
+        grid-area: 4 / 5 / 5 / 6
+
+    & #TechnologyElective_7 
+        grid-area: 1 / 6 / 2 / 7
+    & #TechnologyElective_8 
+        grid-area: 2 / 6 / 3 / 7
+    & #TechnologyElective_9 
+        grid-area: 3 / 6 / 4 / 7
+    & #TechnologyElective_10 
+        grid-area: 4 / 6 / 5 / 7
+
+    & #TechnologyElective_11 
+        grid-area: 1 / 7 / 2 / 8
+    & #TechnologyElective_12 
+        grid-area: 2 / 7 / 3 / 8
+    & #TechnologyElective_13 
+        grid-area: 3 / 7 / 4 / 8
+    & #TechnologyElective_14 
+        grid-area: 4 / 7 / 5 / 8
+    & #TechnologyElective_15 
+        grid-area: 5 / 7 / 6 / 8
+
+    & #TechnologyElective_16 
+        grid-area: 1 / 8 / 2 / 9
+
+    & #TechnologyElective_17 
+        grid-area: 1 / 9 / 2 / 10
+
+
+
+
+    

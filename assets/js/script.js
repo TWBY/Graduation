@@ -1,36 +1,52 @@
 
+var vm1  = new Vue({
+    el: "#intro",
+    data: {
+       
+    },
+    methods:{     
+        scroll : function (){               
+            $('html, body').animate({
+                scrollTop: $('.page').offset().top
+            }, 1000);
+                      
+        },            
+    }
 
-$(document).ready(function () { 
-
-    //存取外部json 並列印出來
-    $.getJSON("assets/js/allClass.json", function(json) {
-        //接入資料放進變數data
-        let data = json;
     
-        //計算總學分數
-        function countCredit(){
-            let credit = 0
-            for(let i=0; i<data.length; i++){
-                credit += data[i].credit
-            }
-            return credit;
-        }
+});
 
-        var totalCredit  =  countCredit();
 
-        // 箭頭函式(Arrow Functions)
-        // const add = function(x,y){
-        //     return x+y;
-        // }
-        // param => expression
-        // const add = (x,y) => x*y;
-        // console.log(add(6,7));
 
-        // var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+var vm2  = new Vue({
+    el: "#v-for-object",
+    data: {
+        courses: "",
+        Compulsory: "",
+        DesignGroupCompulsory: "",
+        TechnologyCompulsory: "",
+        Elective: "",
+        DesignElective: "",
+        TechnologyElective: "",
 
-        // const all  = words.filter(word => word.length>6);
-        // console.log(all);
+
+        checked : true,
+       
+    },
+    created(){  
+        var now = this;
+        axios.get('assets/js/allClass.json').then(function(val){
+               now.courses = val.data;
+               now.Compulsory = now.courses.Compulsory;
+               now.DesignGroupCompulsory = now.courses.DesignGroupCompulsory;
+               now.TechnologyCompulsory = now.courses.TechnologyCompulsory;
+               now.Elective = now.courses.Elective;
+               now.DesignElective = now.courses.DesignElective;
+               now.TechnologyElective = now.courses.TechnologyElective;
+               
+        })
         
+<<<<<<< HEAD
    
         //新增vue物件
         var vm1 = new Vue({
@@ -107,4 +123,169 @@ $(document).ready(function () {
          
     });
        
+=======
+    },
+
+    computed: {
+
+        //篩選已經修過課
+        filteredCompulsoryCourses() {
+            return this.check(this.Compulsory);           
+        },
+        filteredDesignGroupCompulsoryCourses() {
+            return this.check(this.DesignGroupCompulsory);             
+        },
+        filteredTechnologyCompulsoryCourses() {
+            return this.check(this.TechnologyCompulsory);            
+        },
+        filteredElectiveCourses() {
+            return this.check(this.Elective);            
+        },       
+        filteredDesignElectiveCourses() {
+            return this.check(this.DesignElective);            
+        },       
+        filteredTechnologyElectiveCourses() {
+            return this.check(this.TechnologyElective);            
+        }     
+       
+    },
+
+
+    methods:{
+        //----------------------------------------------
+        check: function(category){
+            if(this.checked){
+                return category;
+            }else{
+                return category.filter(d => d.active == false);
+            } 
+        },
+
+        //變更是否已經通過
+        toggle: function(s){
+            s.active = !s.active;
+
+        },
+        button_toggle: function(){
+            this.checked = !this.checked;
+        },
+
+
+        //已通過的學分數
+        categoryPassCredit: function(category){
+            var passtotal = 0;
+            category.forEach(function (s) {
+                if (s.active) {
+                passtotal += s.credit;
+                }
+            });
+            return passtotal;
+        },
+        //-----------------------------------------------------------------------------------
+        //各類已拿到學分數總和
+        getTotalCredit: function(){
+            let total = 0;
+            total += this.getCompulsoryCredit();
+            total += this.getDesignGroupCompulsoryCredit();
+            total += this.getTechnologyCompulsoryCredit();
+            total += this.getElectiveCredit();
+            total += this.getDesignElectiveCredit();
+            total += this.getTechnologyElectiveCredit();
+            
+            return total;
+        },
+
+        //選修總和
+        getDesignCredit: function(){                
+            let total = 0;          
+            total += this.getDesignGroupCompulsoryCredit();         
+            total += this.getDesignElectiveCredit();
+                   
+            return total;
+        },
+        getTechnologyCredit: function(){                
+            let total = 0;       
+            total += this.getElectiveCredit();        
+            total += this.getTechnologyElectiveCredit();
+            
+            return total;
+        },
+
+        //各類已拿到學分數
+        getCompulsoryCredit: function(){                             
+            return this.categoryPassCredit(this.Compulsory);
+        },
+        getDesignGroupCompulsoryCredit: function(){                
+            return this.categoryPassCredit(this.DesignGroupCompulsory);
+        },
+        getTechnologyCompulsoryCredit: function(){                
+            return this.categoryPassCredit(this.TechnologyCompulsory);
+        },
+        getElectiveCredit: function(){                
+            return this.categoryPassCredit(this.Elective);
+        },
+        getDesignElectiveCredit: function(){                
+            return this.categoryPassCredit(this.DesignElective);
+        },
+        getTechnologyElectiveCredit: function(){                
+            return this.categoryPassCredit(this.TechnologyElective);
+        },
+        
+        
+
+        //動態設置id
+        gernerateCompulsoryId : function (index){
+            return "Compulsory_" +　index    
+        },
+        gernerateDesignGroupCompulsoryId : function (index){
+            return "DesignGroupCompulsory_" +　index         
+        },
+        gernerateTechnologyCompulsorysoryId : function (index){
+            return "TechnologyCompulsory_" +　index         
+        },
+        gernerateElectivesoryId : function (index){
+            return "Elective_" +　index         
+        },
+        gernerateDesignElectivesoryId : function (index){
+            return "DesignElective_" +　index         
+        },
+        gernerateTechnologyElectivesoryId : function (index){
+            return "TechnologyElective_" +　index         
+        },
+
+    
+    }
+
+    
+>>>>>>> 12180928
 });
+
+
+
+
+//.showCredit
+let height = window.innerHeight;
+var basicScrollTop = function () {  
+
+    // Reveal the button
+    var CreditReveal = function () { 
+    console.log(window.scrollY);
+      if (window.scrollY >= height - height*0.2) {
+        $(".showCredit").addClass("cansee");
+      } else {
+        $(".showCredit").removeClass("cansee");
+      }    
+    }  
+
+    // Listeners
+    // var Credit = document.querySelector('.showCredit');
+    // Credit.addEventListener('scroll', CreditReveal);
+    // $(".showCredit").on("scroll",CreditReveal());
+    window.addEventListener('scroll', CreditReveal);
+
+      
+  };
+basicScrollTop();
+  
+
+Vue.config.devtools = true;
