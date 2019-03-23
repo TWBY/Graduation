@@ -628,7 +628,7 @@ input[type=checkbox] {
 #mouse-scroll {
   z-index: 9999;
   display: inline-block;
-  font-size: 10px; }
+  font-size: 2em; }
   #mouse-scroll .mouse {
     font-size: 0.8em;
     width: 1em;
@@ -637,13 +637,13 @@ input[type=checkbox] {
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
-    border: 0.1em solid #fff;
+    border: 0.1em solid #6DB9AC;
     margin-left: 0.15em; }
     #mouse-scroll .mouse .mouse-in {
       width: 0.2em;
       height: 0.5em;
       margin: 0.5em auto;
-      background: #fff;
+      background: #6DB9AC;
       position: relative;
       -webkit-animation: animated-mouse 1.2s ease infinite;
       animation: animated-mouse 1.2s ease infinite; }
@@ -655,8 +655,8 @@ input[type=checkbox] {
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
-      border-right: 0.1em solid #fff;
-      border-bottom: 0.1em solid #fff;
+      border-right: 0.1em solid #6DB9AC;
+      border-bottom: 0.1em solid #6DB9AC;
       margin: 0 0 0.1em 0.5em; }
     #mouse-scroll .arrows .down-arrow-1 {
       margin-top: 0.4em;
@@ -717,10 +717,7 @@ input[type=checkbox] {
     opacity: 1; } }
 
 body {
-  background: -webkit-gradient(linear, left top, left bottom, from(#f5bc19), to(#db516a));
-  background: -webkit-linear-gradient(#f5bc19, #db516a);
-  background: -o-linear-gradient(#f5bc19, #db516a);
-  background: linear-gradient(#f5bc19, #db516a);
+  background: #ECF1BB;
   background-size: 100% 100%;
   padding-bottom: 150px; }
 
@@ -796,7 +793,8 @@ body {
   border-radius: 7px;
   padding: 20px;
   width: 220px;
-  background-color: #ddd;
+  background-color: #6DB9AC;
+  color: #333;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: visibility 0s 2s, opacity 0.8s ease-in-out;
@@ -832,12 +830,23 @@ body {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   border-radius: 7px;
   padding: 20px;
-  background-color: #eee;
-  color: #333;
+  background-color: #6DB9AC;
+  color: #555;
   margin-top: 30px; }
 
+.bottom {
+  background-color: #AFD6BA; }
+
 .sidebar {
-  font-size: 30px; }
+  font-size: 30px;
+  color: #333; }
+
+.active {
+  background-color: #247BA0;
+  color: #fff;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s; }
 
 #DesignGroupCompulsory_5 .name {
   font-size: 14px; }
@@ -883,10 +892,3 @@ body {
     -webkit-transform: translate(-5px, -5px);
     -ms-transform: translate(-5px, -5px);
     transform: translate(-5px, -5px); }
-
-.active {
-  background-color: #f24;
-  color: #fff;
-  -webkit-transition-duration: 0.5s;
-  -o-transition-duration: 0.5s;
-  transition-duration: 0.5s; }

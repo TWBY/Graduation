@@ -14,8 +14,6 @@ var vm1  = new Vue({
     
 });
 
-
-
 var vm2  = new Vue({
     el: "#v-for-object",
     data: {
@@ -175,8 +173,6 @@ var vm2  = new Vue({
 });
 
 
-
-
 //.showCredit
 let height = window.innerHeight;
 var basicScrollTop = function () {  
@@ -184,7 +180,7 @@ var basicScrollTop = function () {
     // Reveal the button
     var CreditReveal = function () { 
     console.log(window.scrollY);
-      if (window.scrollY >= height - height*0.2) {
+    if (window.scrollY >= height - height*0.2) {
         $(".showCredit").addClass("cansee");
     } else {
         $(".showCredit").removeClass("cansee");

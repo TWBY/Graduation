@@ -1,9 +1,8 @@
 
-
 {
     "Compulsory": [
         {
-            "name": "test",
+            "name": "資訊概論",
             "number": "IC181",
             "credit": 3,
             "active": false

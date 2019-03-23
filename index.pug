@@ -54,7 +54,6 @@ html
 							.credit {{ course.credit }}
 						
 				.DesignGroupCompulsory
-					img.dc(src="assets/images/dc.png", alt="")
 					.sidebar 設計必修
 					.bottom(v-for='(course,index) in filteredDesignGroupCompulsoryCourses' 
 							v-on:click='toggle(course)' 
@@ -102,7 +101,6 @@ html
 							.credit {{ course.credit }}
 
 				.TechnologyElective
-					img.te(src="assets/images/te.png", alt="")
 					.sidebar 科技選修
 					.bottom(v-for='(course,index) in filteredTechnologyElectiveCourses' 
 							v-on:click='toggle(course)' 

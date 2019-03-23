@@ -56,7 +56,7 @@
             </div>
           </div>
         </div>
-        <div class="DesignGroupCompulsory"><img class="dc" src="assets/images/dc.png" alt="">
+        <div class="DesignGroupCompulsory">
           <div class="sidebar">設計必修</div>
           <div class="bottom" v-for="(course,index) in filteredDesignGroupCompulsoryCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id="gernerateDesignGroupCompulsoryId(index)">
             <div class="unitClass">
@@ -96,7 +96,7 @@
             </div>
           </div>
         </div>
-        <div class="TechnologyElective"><img class="te" src="assets/images/te.png" alt="">
+        <div class="TechnologyElective">
           <div class="sidebar">科技選修</div>
           <div class="bottom" v-for="(course,index) in filteredTechnologyElectiveCourses" v-on:click="toggle(course)" v-bind:class="{ active: course.active }" :id=" gernerateTechnologyElectivesoryId(index)">
             <div class="unitClass">
